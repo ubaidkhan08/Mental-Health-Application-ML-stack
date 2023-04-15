@@ -1,0 +1,7 @@
+tensorflow
+streamlit
+pandas
+seaborn
+cython>=0.29.24
+scipy>=0.15.1
+matplotlib>=1.4.3
