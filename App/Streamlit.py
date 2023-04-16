@@ -46,7 +46,6 @@ def add_and_view_notes():
                     if color == 'red' and not alert_displayed:
                         if st.button("Would you like to connect with our therapist?", key=f"alert_{i}"):
                             st.write("Connecting with therapist...")
-                            st.markdown(f'<a href="{link}">{button_label}</a>', unsafe_allow_html=True)
                 
                             alert_displayed = True
                     else:
