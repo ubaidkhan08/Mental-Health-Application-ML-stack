@@ -6,7 +6,6 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 
 # Load model
 model = tf.keras.models.load_model('App/model.h5')
-link = 'https://cerina.co/#footer'
 
 # Load data
 notes_df = pd.DataFrame({'note': ['']*30, 'sentiment': [0.6]*30})
@@ -45,12 +44,14 @@ def add_and_view_notes():
                     color = 'red' if sentiment >= 0.6 else 'green'
                     st.markdown(f"<p style='background-color: {color}'>{note}</p>", unsafe_allow_html=True)
                     if color == 'red' and not alert_displayed:
-                        if st.button("Would you like to connect with our therapist?", key=f"alert_{i}"):
-                            session_state = True
-                            
-                            if session_state == True:
-                                st.experimental_set_query_params(link="https://cerina.co/#footer") 
-                                st.write("Connecting with therapist...")
+                        
+                        link = 'https://cerina.co/#footer'
+                        button_label = 'Would you like to connect with our therapist?'
+                        
+                        if st.button(button_label, key=f"alert_{i}"):
+                            link = 'https://cerina.co/#footer'
+                            st.markdown(f'<a href="{link}">{button_label}</a>', unsafe_allow_html=True)
+                            st.write("Connecting with therapist...")
                 
                             alert_displayed = True
                     else:
