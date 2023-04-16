@@ -48,7 +48,7 @@ def add_and_view_notes():
                 if sentiment >= 0.6:
                     consecutive_days += 1
                     total_days += 1
-                    if consecutive_days == 1 or total_days == 1:
+                    if consecutive_days >= 1 or total_days >= 1:
                         if st.button("Would you like to connect with our therapist?", key=f"alert_{i}"):
                             # Add code to connect with therapist here
                             st.write("Connecting with therapist...")
@@ -63,7 +63,7 @@ st.set_page_config(page_title="Mental Health Platform")
 
 # Define app layout
 def app():
-    st.title("Cerina - Mental Health Care")
+    st.title("Cerina - Mental Health Caree")
     add_and_view_notes()
 
 if __name__ == "__main__":
