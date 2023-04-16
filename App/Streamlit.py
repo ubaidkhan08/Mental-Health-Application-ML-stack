@@ -47,14 +47,13 @@ def add_and_view_notes():
                         
                         link = 'https://cerina.co/#footer'
                         button_label = 'Would you like to connect with our therapist?'
-                        
-                        #if st.button(button_label, key=f"alert_{i}"):
                         st.markdown(f'<a href="{link}">{button_label}</a>', unsafe_allow_html=True)
-                        #st.write("Connecting with therapist...")
+                        st.write("Flag: Self-harming (this won't be visible to the user)")
                         
                         alert_displayed = True
                     else:
                         alert_displayed = False
+                        st.write("Flag: Normal (this won't be visible to the user)")
                 else:
                     sentiment = predict_sentiment(note)
                     notes_df.loc[i, 'sentiment'] = sentiment
