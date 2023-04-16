@@ -59,7 +59,7 @@ def add_and_view_notes():
 
 
 # Set page title
-st.set_page_config(page_title="Mental Health Platform")
+st.set_page_config(page_title="Mental Health Platformm")
 
 # Define app layout
 def app():
