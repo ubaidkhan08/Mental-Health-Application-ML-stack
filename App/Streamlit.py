@@ -8,7 +8,7 @@ from tensorflow.keras.preprocessing.text import Tokenizer
 model = tf.keras.models.load_model('model.h5')
 
 # Load data
-notes_df = pd.DataFrame({'note': ['']*30, 'sentiment': [0.5]*30})
+notes_df = pd.DataFrame({'note': ['']*30, 'sentiment': [0.6]*30})
 
 with open('tokenizer.json', 'r', encoding='utf-8') as f:
     tokenizer_json = f.read()
