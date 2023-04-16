@@ -50,9 +50,9 @@ def add_and_view_notes():
                         
                         #if st.button(button_label, key=f"alert_{i}"):
                         st.markdown(f'<a href="{link}">{button_label}</a>', unsafe_allow_html=True)
-                            #st.write("Connecting with therapist...")
-                
-                            alert_displayed = True
+                        #st.write("Connecting with therapist...")
+                        
+                        alert_displayed = True
                     else:
                         alert_displayed = False
                 else:
