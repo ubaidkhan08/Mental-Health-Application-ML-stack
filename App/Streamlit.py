@@ -16,6 +16,7 @@ with open('App/tokenizer.json', 'r', encoding='utf-8') as f:
 tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(tokenizer_json)
 
 max_length = 100
+session_state = False
 
 # Define function to predict sentiment of text
 def predict_sentiment(text):
@@ -45,9 +46,9 @@ def add_and_view_notes():
                     st.markdown(f"<p style='background-color: {color}'>{note}</p>", unsafe_allow_html=True)
                     if color == 'red' and not alert_displayed:
                         if st.button("Would you like to connect with our therapist?", key=f"alert_{i}"):
-                            session_state.link_out = True
+                            session_state = True
                             
-                        if session_state.link_out:
+                        if session_state == True:
                             st.experimental_set_query_params(link="https://cerina.co/#footer") 
                             st.write("Connecting with therapist...")
                 
@@ -59,9 +60,6 @@ def add_and_view_notes():
                     notes_df.loc[i, 'sentiment'] = sentiment
                     color = 'red' if sentiment >= 0.6 else 'green'
                     st.markdown(f"<p style='background-color: {color}'>{note}</p>", unsafe_allow_html=True)
-
-
-
 
 # Set page title
 st.set_page_config(page_title="Mental Health Platform")
