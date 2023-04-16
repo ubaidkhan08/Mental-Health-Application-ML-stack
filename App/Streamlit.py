@@ -44,8 +44,9 @@ def add_and_view_notes():
                     st.markdown(f"<p style='background-color: {color}'>{note}</p>", unsafe_allow_html=True)
                     if color == 'red' and not alert_displayed:
                         if st.button("Would you like to connect with our therapist?", key=f"alert_{i}"):
-                            # Add code to connect with therapist here
                             st.write("Connecting with therapist...")
+                            st.markdown(f'<a href="{'https://cerina.co/#footer'}">{button_label}</a>', unsafe_allow_html=True)
+                
                             alert_displayed = True
                     else:
                         alert_displayed = False
