@@ -45,6 +45,10 @@ def add_and_view_notes():
                     st.markdown(f"<p style='background-color: {color}'>{note}</p>", unsafe_allow_html=True)
                     if color == 'red' and not alert_displayed:
                         if st.button("Would you like to connect with our therapist?", key=f"alert_{i}"):
+                            session_state.link_out = True
+                            
+                        if session_state.link_out:
+                            st.experimental_set_query_params(link="https://cerina.co/#footer") 
                             st.write("Connecting with therapist...")
                 
                             alert_displayed = True
