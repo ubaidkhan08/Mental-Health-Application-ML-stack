@@ -39,7 +39,7 @@ def add_and_view_notes():
                     notes_df.loc[i, 'sentiment'] = predict_sentiment(note)
                 sentiment = notes_df.loc[i, 'sentiment']
                 color = 'red' if sentiment >= 0.5 else 'green'
-                st.markdown(f"<p style='background-color: {color}'>{note}</p>", unsafe_allow_html=True)
+                st.markdown(f"<p style='background-color: {color}'>{notes_df.loc[i, 'note']}</p>", unsafe_allow_html=True)
                 if sentiment >= 0.6:
                     consecutive_days += 1
                     total_days += 1
