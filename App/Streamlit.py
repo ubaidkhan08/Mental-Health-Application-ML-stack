@@ -5,12 +5,12 @@ from tensorflow.keras.preprocessing.sequence import pad_sequences
 from tensorflow.keras.preprocessing.text import Tokenizer
 
 # Load model
-model = tf.keras.models.load_model('model.h5')
+model = tf.keras.models.load_model('App/model.h5')
 
 # Load data
 notes_df = pd.DataFrame({'note': ['']*30, 'sentiment': [0.6]*30})
 
-with open('tokenizer.json', 'r', encoding='utf-8') as f:
+with open('App/tokenizer.json', 'r', encoding='utf-8') as f:
     tokenizer_json = f.read()
 tokenizer = tf.keras.preprocessing.text.tokenizer_from_json(tokenizer_json)
 
