@@ -48,9 +48,9 @@ def add_and_view_notes():
                         if st.button("Would you like to connect with our therapist?", key=f"alert_{i}"):
                             session_state = True
                             
-                        if session_state == True:
-                            st.experimental_set_query_params(link="https://cerina.co/#footer") 
-                            st.write("Connecting with therapist...")
+                            if session_state == True:
+                                st.experimental_set_query_params(link="https://cerina.co/#footer") 
+                                st.write("Connecting with therapist...")
                 
                             alert_displayed = True
                     else:
