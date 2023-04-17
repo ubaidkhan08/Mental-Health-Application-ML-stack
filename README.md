@@ -4,5 +4,5 @@ The solution includes a web-app tool designed to provide early intervention for 
 
 
 #### `Web App Interface`
-![alt text](App/Screenshot - 1.png)
+![alt text](App/Screenshot1.png)
 ======
